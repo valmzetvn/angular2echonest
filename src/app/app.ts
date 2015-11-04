@@ -34,8 +34,8 @@ import {Search} from './components/search/search';
 
 @RouteConfig([
 
-	{ path: '/',					redirectTo: '/home'},
-	{ path: '/home',				as: 'Home',				component: Hotttlist},
+
+	{ path: '/',					as: 'Home',				component: Hotttlist},
 	{ path: '/artist/:name',		as: 'Artist',			component: Artist},
 	{ path: '/search', 				as: 'Search', 			component: Search },
 
