@@ -11,7 +11,7 @@ Live example at http://angular2.loicmarcos.be
 - npm start
 
 #Description
-Since Angular 2 is still in alpha, the documentation is scarce and/or incomplete and/or outdated. This sample aims to provide real-life and up-to-dat*ish* (Angular2 is now alpha 45, but that should still work) examples of use :
+Since Angular 2 is still in alpha, the documentation is scarce and/or incomplete and/or outdated. This sample aims to provide real-life and up-to-date*ish* (Angular2 is now alpha 45, but that should still work) examples of use :
 
 - Querying an API with http module and using the data
 - Using the router, using router-parameters
