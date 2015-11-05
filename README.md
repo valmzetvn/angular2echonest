@@ -24,7 +24,7 @@ There isn't a styleguide that carry nearly-authoritative weight right now (As th
 Since it's a two-days, coding in front of the champion's league at night-project, there's more than certainly room for improvements. This sample doesn't provide examples of child-parent communication, and I could have pushed the componentization further.
 
 ##Todo
-~~- Write an article, publish it to Medium, be famous~~
+- ~~Write an article, publish it to Medium, be famous~~
 
 https://medium.com/@marcosloic/writing-a-basic-application-with-angular-2-5811cf6d6bb
 
