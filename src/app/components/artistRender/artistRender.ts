@@ -1,12 +1,13 @@
 import { Component, View, Input, NgIf, NgFor } from 'angular2/angular2';
 import { ArtistReviewRender } from '../artistReviewRender/artistReviewRender';
+import { Switch } from '../switchRender/switch';
 
 @Component({
 	selector: 'artist-render',
 })
 
 @View({
-	directives: [NgIf, NgFor, ArtistReviewRender],
+	directives: [NgIf, NgFor, ArtistReviewRender, Switch],
 	template: `
 	<div *ng-if="data" class="cyan">
 		<div class="container">
@@ -18,26 +19,12 @@ import { ArtistReviewRender } from '../artistReviewRender/artistReviewRender';
 
 					<div class="col s2">
 						<h6 class="white-text">Reviews</h6>
-						<div class="switch">
-						<label class="white-text">
-							Off
-							<input (click)=switchControl('reviews') type="checkbox">
-							<span class="lever"></span> 
-							On
-							</label>
-						</div>
+						<switch-render (click)="switchControl('reviews')" />
 					</div>
 
 					<div class="col s2">
 						<h6 class="white-text">News</h6>
-							<div class="switch">
-								<label class="white-text">
-									Off
-									<input (click)=switchControl('news') type="checkbox">
-									<span class="lever"></span>
-									On
-								</label>
-							</div>
+						<switch-render (click)="switchControl('news')" />
 						</div>
 					</div>
 
@@ -88,5 +75,9 @@ export class ArtistRender {
 
 	switchControl(value) {
 	        this[value] = event.target['checked'];
+	}
+
+	alertMe() {
+		console.log('alert');
 	}
 }
