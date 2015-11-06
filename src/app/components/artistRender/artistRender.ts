@@ -19,19 +19,12 @@ import { Switch } from '../switchRender/switch';
 
 					<div class="col s2">
 						<h6 class="white-text">Reviews</h6>
-						<switch />
+						<switch-render (click)="switchControl('reviews')" />
 					</div>
 
 					<div class="col s2">
 						<h6 class="white-text">News</h6>
-							<div class="switch">
-								<label class="white-text">
-									Off
-									<input (click)=switchControl('news') type="checkbox">
-									<span class="lever"></span>
-									On
-								</label>
-							</div>
+						<switch-render (click)="switchControl('news')" />
 						</div>
 					</div>
 
@@ -82,5 +75,9 @@ export class ArtistRender {
 
 	switchControl(value) {
 	        this[value] = event.target['checked'];
+	}
+
+	alertMe() {
+		console.log('alert');
 	}
 }
