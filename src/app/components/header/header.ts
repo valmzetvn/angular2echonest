@@ -1,6 +1,5 @@
 import {Component, View} from 'angular2/angular2';
-import { Search } from '../search/search';
-import { RouterLink, RouteParams } from 'angular2/router';
+import { RouterLink } from 'angular2/router';
 
 @Component({
 	selector: 'header'

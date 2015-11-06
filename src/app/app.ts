@@ -25,7 +25,7 @@ import {Search} from './components/search/search';
 })
 
 @View({
-  directives: [Header, Hotttlist, RouterLink, RouterOutlet],
+  directives: [Header, RouterOutlet],
     template: `
     <header></header>
     <router-outlet></router-outlet>
@@ -42,7 +42,5 @@ import {Search} from './components/search/search';
 ])
 
 export class Main {
-
-
 
 }

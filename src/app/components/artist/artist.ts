@@ -6,8 +6,6 @@ import { ArtistRender } from '../artistRender/artistRender';
 
 @Component({
 	selector: 'artist',
-	bindings: [Echonest],
-
 })
 
 @View({
