@@ -36,7 +36,6 @@ export class Artist {
 	onInit() {
 		this.service.getArtistData(this.artistName)
 		.subscribe((data) => {
-			console.log(data);
 			this.setData(data.response.artist);
 		})
 
