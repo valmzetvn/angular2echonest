@@ -25,14 +25,6 @@ export class Echonest {
 
 	}
 
-	getArtistImage(name) {
-		let endpoint = 'artist/images?';
-		let url = this.url + endpoint + '&api_key=' + this.apiKey + '&name=' + name + '&format=' + this.format + '&results=1&start=0';
-		return this.http.get(url)
-			.map(res => res.json())
-
-	}
-
 	getArtistData(name) {
 		let endpoint = 'artist/profile?';
 		let url = this.url + endpoint + '&api_key=' + this.apiKey + '&name=' + name + '&format=' + this.format + '&bucket=blogs&bucket=images&bucket=genre&bucket=reviews&bucket=news';
@@ -40,13 +32,6 @@ export class Echonest {
 			.map(res => res.json())
 	}
 
-	getArtist(name) {
-		let endpoint = 'artist/images?';
-		let url = this.url + endpoint + '&api_key=' + this.apiKey + '&name=' + name + '&format=' + this.format + '&results=1&start=0';
-		return this.http.get(url)
-			.map(res => res.json())
-
-	}
 
 	artistSearch (name) {
 	        let endpoint = 'artist/suggest?';

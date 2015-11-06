@@ -1,14 +1,13 @@
-import {Component, View, CORE_DIRECTIVES as Core, NgFor, NgModel, Inject, Output} from 'angular2/angular2';
+import { Component, View } from 'angular2/angular2';
 import { HotttlistElementRender } from '../hotttlistElementRender/hotttlistElementRender';
 import { Echonest } from '../../services/Echonest';
 
 @Component({
 	selector: 'hotttlist',
-	bindings: [Echonest]
 })
 
 @View({
-	directives: [HotttlistElementRender, Core, NgFor],
+	directives: [HotttlistElementRender],
 	template: `
 		<div class="container">
 			<div class="row">
