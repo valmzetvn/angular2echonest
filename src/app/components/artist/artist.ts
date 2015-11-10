@@ -1,4 +1,4 @@
-import { Component, View } from 'angular2/angular2';
+import { Component, View, Output, EventEmitter } from 'angular2/angular2';
 import { RouteParams } from 'angular2/router';
 import { Echonest } from '../../services/Echonest';
 import { ArtistRender } from '../artistRender/artistRender';
@@ -23,7 +23,6 @@ export class Artist {
 	artistName: string;
 	artistBio: Object;
 
-
 	constructor(service: Echonest, routeParams: RouteParams) {
 		this.service = service;
 		this.artistName = routeParams.get('name');
@@ -44,6 +43,8 @@ export class Artist {
 		.subscribe((data) => {
 			this.artistBio = data['0']
 		})
+
 	}
+
 
 }

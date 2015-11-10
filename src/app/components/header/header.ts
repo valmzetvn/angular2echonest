@@ -1,5 +1,6 @@
 import {Component, View} from 'angular2/angular2';
 import { RouterLink } from 'angular2/router';
+import {TitleStore} from '../../stores/titleStore';
 
 @Component({
 	selector: 'header'
@@ -11,7 +12,7 @@ import { RouterLink } from 'angular2/router';
 	<header id="header" class="page-topbar">
 		<nav class="cyan">
 			<div class="nav-wrapper container">
-				<a href="#" class="brand-logo">{{title}}</a>
+				<a href="#" class="brand-logo">{{title}} / {{subtitle}}</a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li><a [router-link]="['/Search']">Search an artist</a></li>
 				</ul>
@@ -22,11 +23,19 @@ import { RouterLink } from 'angular2/router';
 })
 
 export class Header {
-
+	titleStore: TitleStore;
 	title: string;
 
-	constructor() {
-		this.title = 'Angular 2 & Echonest API' ;
+	constructor(titleStore: TitleStore) {
+		this.title = 'Angular 2 & Echonest API';
+		this.titleStore = titleStore;
+	}
+
+	onInit() {
+		this.titleStore.getTitle()
+				.subscribe((data) => {
+					this.subtitle = data;
+				});
 	}
 
 }
