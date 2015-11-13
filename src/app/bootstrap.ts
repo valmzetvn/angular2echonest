@@ -7,7 +7,7 @@ import {bootstrap, FORM_PROVIDERS, ELEMENT_PROBE_PROVIDERS} from 'angular2/angul
 import {ROUTER_PROVIDERS} from 'angular2/router';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {Echonest} from './services/Echonest';
-import {TitleStore} from './stores/titleStore';
+import {FavStore} from './stores/favStore';
 
 /*
  * App Component
@@ -26,5 +26,5 @@ bootstrap(Main, [
 	HTTP_PROVIDERS,
 	ELEMENT_PROBE_PROVIDERS,
 	Echonest,
-	TitleStore
+	FavStore
 ]);

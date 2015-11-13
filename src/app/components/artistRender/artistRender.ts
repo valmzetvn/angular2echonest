@@ -1,4 +1,4 @@
-import { Component, View, Input, NgIf, NgFor } from 'angular2/angular2';
+import { Component, View, Input, NgIf, NgFor, NgClass } from 'angular2/angular2';
 import { ArtistReviewRender } from '../artistReviewRender/artistReviewRender';
 
 @Component({
@@ -6,7 +6,7 @@ import { ArtistReviewRender } from '../artistReviewRender/artistReviewRender';
 })
 
 @View({
-	directives: [NgIf, NgFor, ArtistReviewRender],
+	directives: [NgIf, NgFor, ArtistReviewRender, NgClass],
 	template: `
 	<div *ng-if="data" class="cyan">
 		<div class="container">
@@ -38,8 +38,18 @@ import { ArtistReviewRender } from '../artistReviewRender/artistReviewRender';
 									On
 								</label>
 							</div>
+					</div>
+					<div class="col s2">
+						<h6 class="white-text">Favourite</h6>
+							<i class="material-icons" [ng-class]="{active: isFavourite, inactive: !isFavourite}" (click)="toggle(!isFavourite)">star_rate</i>
 						</div>
 					</div>
+
+
+
+
+					</div>
+
 
 			</div>
 		</div>
@@ -79,14 +89,27 @@ import { ArtistReviewRender } from '../artistReviewRender/artistReviewRender';
 			</div>
 		</div>
 
-	`
+	`,
+	styles: [`
+		.active {
+			color: yellow
+		}
+		.inactive {
+			color:white
+		}
+	`]
 })
 
 export class ArtistRender {
 	@Input() data: Object;
 	@Input() bio: Object;
+	isFavourite: boolean = false;
 
 	switchControl(value) {
-	        this[value] = event.target['checked'];
+	    this[value] = event.target['checked'];
+	}
+
+	toggle(newState) {
+		this.isFavourite = newState;
 	}
 }

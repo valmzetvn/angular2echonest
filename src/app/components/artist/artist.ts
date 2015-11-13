@@ -1,4 +1,4 @@
-import { Component, View, Output, EventEmitter } from 'angular2/angular2';
+import { Component, View, Output } from 'angular2/angular2';
 import { RouteParams } from 'angular2/router';
 import { Echonest } from '../../services/Echonest';
 import { ArtistRender } from '../artistRender/artistRender';
@@ -35,7 +35,6 @@ export class Artist {
 	onInit() {
 		this.service.getArtistData(this.artistName)
 		.subscribe((data) => {
-			console.log(data);
 			this.setData(data.response.artist);
 		})
 
