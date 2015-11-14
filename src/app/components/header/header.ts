@@ -25,16 +25,11 @@ import { FavStore } from '../../stores/favStore';
 
 export class Header {
 	title: string;
+	favStore: FavStore;
 
-	constructor() {
+	constructor(favStore: FavStore) {
 		this.title = 'Angular 2 & Echonest API';
-	}
-
-	onInit() {
-		// this.titleStore.getTitle()
-		// 		.subscribe((data) => {
-		// 			this.subtitle = data;
-		// 		});
+		this.favStore = favStore;
 	}
 
 }

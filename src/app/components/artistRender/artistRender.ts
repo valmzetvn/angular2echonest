@@ -1,5 +1,6 @@
 import { Component, View, Input, NgIf, NgFor, NgClass } from 'angular2/angular2';
 import { ArtistReviewRender } from '../artistReviewRender/artistReviewRender';
+import { FavStore } from '../../stores/favStore';
 
 @Component({
 	selector: 'artist-render',
@@ -41,7 +42,7 @@ import { ArtistReviewRender } from '../artistReviewRender/artistReviewRender';
 					</div>
 					<div class="col s2">
 						<h6 class="white-text">Favourite</h6>
-							<i class="material-icons" [ng-class]="{active: isFavourite, inactive: !isFavourite}" (click)="toggle(!isFavourite)">star_rate</i>
+							<i class="material-icons" [ng-class]="{active: isFavourite, inactive: !isFavourite}" (click)="toggleFavourite(data, !isFavourite)">star_rate</i>
 						</div>
 					</div>
 
@@ -104,12 +105,20 @@ export class ArtistRender {
 	@Input() data: Object;
 	@Input() bio: Object;
 	isFavourite: boolean = false;
+	favStore: FavStore;
+
+	constructor(favStore: FavStore) {
+		this.favStore = favStore;
+		console.log(this.favStore.getFavourites().subscribe(data => console.log(data)))
+	}
+
 
 	switchControl(value) {
 	    this[value] = event.target['checked'];
 	}
 
-	toggle(newState) {
+	toggleFavourite(artist, newState) {
+		this.favStore.addFavourite(artist);
 		this.isFavourite = newState;
 	}
 }
