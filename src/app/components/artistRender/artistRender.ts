@@ -109,7 +109,7 @@ export class ArtistRender {
 
 	constructor(favStore: FavStore) {
 		this.favStore = favStore;
-		console.log(this.favStore.getFavourites().subscribe(data => console.log(data)))
+		this.favStore.getFavourites().subscribe(x => console.log(x));
 	}
 
 
