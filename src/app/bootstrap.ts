@@ -26,5 +26,6 @@ bootstrap(Main, [
   ROUTER_PROVIDERS,
   HTTP_PROVIDERS,
   ELEMENT_PROBE_PROVIDERS,
-  Echonest
+  Echonest,
+  Pinterest
 ]);
