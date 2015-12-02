@@ -21,7 +21,7 @@ import {Search} from './components/search/search';
 
 
 @Component({
-	selector: 'main'
+  selector: 'main'
 })
 
 @View({
@@ -34,10 +34,11 @@ import {Search} from './components/search/search';
 
 @RouteConfig([
 
-	{ path: '/',					redirectTo: '/home'},
-	{ path: '/home',				as: 'Home',				component: Hotttlist},
-	{ path: '/artist/:name',		as: 'Artist',			component: Artist},
-	{ path: '/search', 				as: 'Search', 			component: Search },
+  { path: '/',          redirectTo: '/home'},
+  // { path: '/home',        as: 'Home',        component: Hotttlist},
+  { path: '/home',        as: 'Home',        component: Hotttlist},
+  { path: '/artist/:name',    as: 'Artist',      component: Artist},
+  { path: '/search',         as: 'Search',       component: Search },
 
 ])
 

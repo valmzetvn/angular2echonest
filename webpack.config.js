@@ -76,7 +76,7 @@ module.exports = {
       // './examples/rx-timeflies/bootstrap'
       // './examples/simple-component/bootstrap'
       // './examples/simple-todo/bootstrap'
-
+      './src/app/script/js/pinsdk.js',
       './src/app/bootstrap'
     ]
   },

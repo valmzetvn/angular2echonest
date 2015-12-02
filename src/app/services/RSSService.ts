@@ -2,7 +2,7 @@ import { Injectable } from 'angular2/angular2';
 import {Http} from 'angular2/http';
 
 @Injectable()
-export class Echonest {
+export class RSSService {
   url: string;
   apiKey: string;
   format: string;
@@ -47,9 +47,4 @@ export class Echonest {
               .map(res => res.json())
               .map(res => res.response.biographies);
   }
-
-
-
-
 }
-
