@@ -1,3 +1,4 @@
+declare var PDK: any;
 
 import {Service} from './Service';
 
@@ -7,7 +8,10 @@ export class Pinterest extends Service {
 
   public constructor() {
     super();
-
+    PDK.init({
+        appId: this.appKey,
+        cookie: true
+    });
   }
 
   public get ready():boolean {
