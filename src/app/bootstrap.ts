@@ -27,5 +27,6 @@ bootstrap(Main, [
   HTTP_PROVIDERS,
   ELEMENT_PROBE_PROVIDERS,
   Echonest,
+  RSSService,
   Pinterest
 ]);
