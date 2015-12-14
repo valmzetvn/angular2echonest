@@ -1,8 +1,8 @@
-import {Component, View, Input, NgFor} from 'angular2/angular2';
+import {Component, View, Input, NgFor } from 'angular2/angular2';
 import { RouterLink, RouteParams } from 'angular2/router';
 
 @Component({
-  selector: 'hotttlist-element',
+  selector: 'feedlist-item',
 })
 
 @View({
@@ -11,15 +11,15 @@ import { RouterLink, RouteParams } from 'angular2/router';
     <div class="z-depth-1">
       <ul class="collection with-header">
         <li class="collection-header"><h2 class="header">Echonest's hotttest artists</h2></li>
-        <a *ng-for="#artist of artists; #i = index" [router-link]="['/Artist', {name: artist.name}]" class="collection-item">
-          <li>{{i+1}}: {{artist.index}} {{artist.name}}</li>
-        </a>
+        <li *ng-for="#artist of artists; #i = index" class="feed-item">
+          <a [router-link]="['/Artist', {name: artist.name}]">{{i+1}}: {{artist.index}} {{artist.title}}</a>
+        </li>
       </ul>
     </div>
   `
 })
 
-export class HotttlistElementRender {
+export class FeedItem {
   @Input() artists: Object;
 
 }

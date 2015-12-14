@@ -12,6 +12,7 @@ import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/angular2';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {Hotttlist} from './components/hotttlist/hotttlist';
+import {FeedList} from './components/feed/FeedList';
 import {Header} from './components/header/header';
 import {Artist} from './components/artist/artist';
 import {Search} from './components/search/search';
@@ -34,8 +35,8 @@ import {Search} from './components/search/search';
 
 @RouteConfig([
 
-  { path: '/',          redirectTo: '/home'},
-  // { path: '/home',        as: 'Home',        component: Hotttlist},
+  { path: '/',          redirectTo: '/feed'},
+  { path: '/feed',        as: 'Feed',        component: FeedList},
   { path: '/home',        as: 'Home',        component: Hotttlist},
   { path: '/artist/:name',    as: 'Artist',      component: Artist},
   { path: '/search',         as: 'Search',       component: Search },
